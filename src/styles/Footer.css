@@ -1,0 +1,16 @@
+.footer {
+  padding: 36px 0;
+  background: var(--blue-950);
+  color: var(--white);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.footer p {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}

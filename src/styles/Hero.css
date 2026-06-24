@@ -1,0 +1,22 @@
+.hero {
+  padding: 88px 0;
+  color: var(--white);
+  overflow: hidden;
+
+  /* Define os gradientes e adiciona a cor padrão */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    var(--bg-image);
+
+  /* Configurações normais de tamanho e posição */
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: center;
+}

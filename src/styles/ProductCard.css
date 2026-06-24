@@ -1,0 +1,32 @@
+.product-image {
+  width: 100%;
+  height: 100%;
+  
+  /* Esse é o segredo: ele corta as bordas da imagem se necessário, */
+  /* mas NUNCA deixa ela esticar ou amassar. */
+  object-fit: cover; 
+  
+  /* Mantém o foco da imagem sempre no centro do card */
+  object-position: center; 
+  
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Dizemos para o navegador levar 0.4 segundos para fazer qualquer mudança na imagem */
+  transition: transform 0.4s ease-in-out;
+}
+
+.product-card:hover .product-image {
+    /* O transform scale(1.08) aumenta a imagem em apenas 8% do tamanho original */
+    transform: scale(1.40);
+}
+
+/* Evita que a imagem "saia" das bordas arredondadas do card ao ampliar */
+.product-art{
+    position: relative;
+    height: 190px;
+    display: grid;
+    place-items: center;
+    overflow: hidden; /* <-- Isso aqui garante que o zoom fique preso dentro do quadrado */
+}
+

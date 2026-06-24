@@ -1,0 +1,51 @@
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 26px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  /* Faz o card subir 8 pixels no eixo Y (vertical) */
+  transform: translateY(-6px) scale(1.02); 
+  
+
+  /* clareia levemente o fundo e a borda para destacar */
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--yellow-400); /* Se quiser dar um toque do Sonic com a sua cor amarela */
+  cursor: pointer; /* Transforma a setinha do mouse na mãozinha de clique */
+}
+
+.feature-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.feature-header h1{
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.feature-header p{
+  color: #a0aec0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-card span {
+  color: var(--yellow-400);
+}
+
+.feature-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
