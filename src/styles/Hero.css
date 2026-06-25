@@ -1,0 +1,153 @@
+.hero {
+  min-height: 640px;
+  padding: 88px 0;
+  color: var(--white);
+  overflow: hidden;
+  transition: background-image 0.4s ease-in-out;
+  background:
+    linear-gradient(90deg, rgba(6, 20, 47, 0.92) 0%, rgba(6, 20, 47, 0.68) 47%, rgba(6, 20, 47, 0.28) 100%),
+    var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-grid {
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px 1fr 52px;
+  gap: 14px;
+  align-items: center;
+}
+
+.carousel-card {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  border-radius: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 380px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-caption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(6, 20, 47, 0.82);
+  backdrop-filter: blur(12px);
+}
+
+.carousel-caption strong {
+  color: var(--yellow-400);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carousel-caption span {
+  font-weight: 900;
+}
+
+.carousel-arrow {
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: var(--white);
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.06);
+  background: var(--yellow-400);
+  color: var(--blue-950);
+}
+
+.carousel-dots {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-dots button.active {
+  width: 34px;
+  border-radius: 999px;
+  background: var(--yellow-400);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 64px 0;
+  }
+
+  .hero-grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-carousel {
+    grid-template-columns: 44px 1fr 44px;
+  }
+
+  .carousel-card,
+  .carousel-card img {
+    min-height: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-carousel {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-arrow {
+    display: none;
+  }
+
+  .carousel-card,
+  .carousel-card img {
+    min-height: 260px;
+    height: 260px;
+  }
+}

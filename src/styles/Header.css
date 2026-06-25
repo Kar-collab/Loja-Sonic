@@ -1,0 +1,7 @@
+.brand-logo-img {
+  width: 40px;          /* Define uma largura fixa igual à altura */
+  height: 40px;         /* Define uma altura fixa para virar um quadrado */
+  border-radius: 50%;   /* O segredo: 50% transforma qualquer quadrado perfeito em um círculo */
+  object-fit: cover;    /* Faz a imagem se adaptar ao círculo sem ficar esticada ou amassada */
+  border: 2px solid #ffb703; /* Opcional: Adiciona uma bordinha amarela do Sonic ao redor da bolinha */
+}
