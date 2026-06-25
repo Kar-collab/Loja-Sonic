@@ -1,58 +1,52 @@
-# CrossWorlds Store
+# Loja Sonic - Sonic Racing Crossworld
+## 📑 Sobre o projeto
+Este projeto foi desenvolvido como parte de um trabalho para a faculdade. 
+O projeto consiste em uma aplicação web e-commerce fictícia baseada no jogo **Sonic Racing Crossworld.**
+O objetivo principal é colocar em prática todos os conhecimentos adquiridos em aula sobre react.
 
-Loja demonstrativa em **React + JavaScript** inspirada em Sonic Racing: CrossWorlds, baseada na ideia do projeto `toy3d`: vitrine, catálogo, carrinho e checkout.
+---
 
-> Projeto acadêmico. Não usa imagens oficiais nem realiza venda real.
+## ⌨️ Funcionalidades
+* **Vitrine de produtos**: Listagem dos itens temáticos do universo de Sonic Racing Crossworld que estão á venda
+* **Filtragem por categoria**: Navegação com filtragem para facilitar o usuário a encontrar algum item expecífico
+* **Simulação de carrinho**: Carrinho para adicionar os itens e fazer o calculo em tempo real dos itens
 
-## Funcionalidades
+## 🛠️ Tecnologias usadas
+* **React (JSX)**: Biblioteca javascript para a construção das interfaces de usuário baseado em componentes reutilizáveis 
+* **JavaScript**: Manipulação de dados e a lógica da página
+* **HTML + CSS**: Estrutura do site e estilização do layout
 
-- Home com hero promocional
-- Catálogo de produtos
-- Busca por texto
-- Filtro por categoria
-- Filtro por plataforma
-- Carrinho lateral
-- Alteração de quantidade
-- Remoção de produtos
-- Checkout simulado
-- Layout responsivo com CSS puro
+## 📁 Estrutura de Arquivos
+Estruturação usada no projeto
 
-## Como rodar
-
+```text
+.
+├── node_modules/       # Dependências e bibliotecas instaladas pelo npm
+├── src/                # Código-fonte principal (componentes, páginas e assets do projeto)
+├── .gitignore          # Arquivos e pastas ocultados para o Git
+├── index.html          # Ponto de entrada HTML para a aplicação
+├── package-lock.json   # Histórico detalhado das versões exatas das dependências
+├── package.json        # Configurações, scripts e dependências do projeto
+└── README.md           # Documentação do projeto
+```
+## ⚙️ Como instalar e executar
+Será necessário ter instalado o **Node.js**. Após isso basta seguir os passos abaixo no seu terminal:
+1. **Baixe os arquivos deste repositório**
+2. **Instale as dependências necessárias:**
 ```bash
 npm install
+```
+3. **Inicie o servidor:**
+```bash
 npm run dev
 ```
-
-Depois abra o endereço mostrado no terminal, normalmente:
-
-```bash
-http://localhost:5173
+4. Após ter executado o **npm run dev**, o terminal irá gerar um link local. 
+Abra este link no seu navegador para visualizar e testar o site em tempo real! 
 ```
 
-## Estrutura
-
-```txt
-src/
-  components/       Componentes visuais da aplicação
-  data/             Mock de produtos, categorias e plataformas
-  hooks/            Hook de carrinho
-  services/         Camada preparada para futura API
-  styles/           CSS global responsivo
-  utils/            Funções auxiliares
 ```
-
-## Ideia de divisão em grupo
-
-- Pessoa 1: estrutura React, Header, Hero, Footer e responsividade
-- Pessoa 2: catálogo, produtos, filtros e busca
-- Pessoa 3: carrinho, checkout e validações
-- Pessoa 4, se houver: README, testes, deploy na Vercel e revisão visual
-
-## Segurança e boas práticas
-
-- O checkout é apenas simulado.
-- Não há coleta real de pagamento.
-- Não há armazenamento de dados sensíveis.
-- Os dados de produtos ficam em mock local.
-- Em um projeto real, preços e pedidos devem ser validados no back-end.
+## 👥 Autores
+* Karla Beatriz
+* Cauã yuri
+* Ryan Gabriel
+* Carlos Eduardo
