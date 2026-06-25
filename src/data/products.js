@@ -1,10 +1,12 @@
-import standard from '../assets/standard.png'
-import deluxe from '../assets/deluxe.png'
-import pass from '../assets/pass.png'
-import chav from '../assets/chav.png'
-import grip from '../assets/grip.png'
-import poster from '../assets/poster.png'
-import ursinho from '../assets/ursinho.png'
+import standard from '../assets/standard.png';
+import deluxe from '../assets/deluxe.png';
+import pass from '../assets/pass.png';
+import chav from '../assets/chav.png';
+import grip from '../assets/grip.png';
+import poster from '../assets/poster.png';
+import ursinho from '../assets/ursinho.png';
+
+const allPlatforms = ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'];
 
 export const categories = [
   { key: 'todos', label: 'Todos' },
@@ -12,6 +14,7 @@ export const categories = [
   { key: 'dlc', label: 'DLCs' },
   { key: 'colecionaveis', label: 'Colecionáveis' },
   { key: 'acessorios', label: 'Acessórios' },
+  { key: 'vestuario', label: 'Vestuário' },
 ];
 
 export const platforms = [
@@ -33,7 +36,7 @@ export const products = [
     price: 299.9,
     oldPrice: 349.9,
     category: 'jogos',
-    platforms: ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'],
+    platforms: allPlatforms,
     rating: 4.8,
     badge: 'Mais vendido',
     tags: ['jogo base', 'corrida', 'multiplataforma'],
@@ -59,7 +62,7 @@ export const products = [
     price: 149.9,
     oldPrice: null,
     category: 'dlc',
-    platforms: ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'],
+    platforms: allPlatforms,
     rating: 4.7,
     badge: 'DLC',
     tags: ['dlc', 'crossovers', 'personagens'],
@@ -72,7 +75,7 @@ export const products = [
     price: 59.9,
     oldPrice: 79.9,
     category: 'colecionaveis',
-    platforms: ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'],
+    platforms: allPlatforms,
     rating: 4.5,
     badge: 'Presente',
     tags: ['brinde', 'adesivos', 'colecionável'],
@@ -85,7 +88,7 @@ export const products = [
     price: 89.9,
     oldPrice: null,
     category: 'acessorios',
-    platforms: ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'],
+    platforms: allPlatforms,
     rating: 4.4,
     badge: null,
     tags: ['controle', 'acessório', 'conforto'],
@@ -98,23 +101,113 @@ export const products = [
     price: 39.9,
     oldPrice: null,
     category: 'colecionaveis',
-    platforms: ['ps5', 'ps4', 'xbox', 'switch', 'switch2', 'pc'],
+    platforms: allPlatforms,
     rating: 4.6,
     badge: 'Novo',
     tags: ['pôster', 'decoração', 'setup'],
   },
-
   {
-    id:'pelucia-sonic',
-    name: 'Ursinho de Pelúcia Sonic Classic',
+    id: 'pelucia-sonic',
+    name: 'Pelúcia Sonic Classic',
     image: ursinho,
-    description: 'Pelúcia super macia de 30cm do ouriço mais rápido do mundo. Perfeito para decorar seu setup.',
-    price: 129.90,
-    oldPrice: 159.90,
+    description: 'Pelúcia super macia de 30 cm do ouriço mais rápido do mundo. Perfeita para decorar o setup.',
+    price: 129.9,
+    oldPrice: 159.9,
     category: 'colecionaveis',
-    platforms: [],
-    rating:5.0,
+    platforms: allPlatforms,
+    rating: 5.0,
     badge: 'Fofinho',
     tags: ['pelúcia', 'colecionável', 'infantil'],
-  }
+  },
+  {
+    id: 'camiseta-speed-team',
+    name: 'Camiseta Speed Team Azul',
+    image: standard,
+    description: 'Camiseta fictícia com estampa inspirada nas pistas e nos anéis dourados da franquia.',
+    price: 74.9,
+    oldPrice: 99.9,
+    category: 'vestuario',
+    platforms: allPlatforms,
+    rating: 4.7,
+    badge: 'Look gamer',
+    tags: ['camiseta', 'sonic', 'vestuário'],
+  },
+  {
+    id: 'bone-ring-racer',
+    name: 'Boné Ring Racer',
+    image: chav,
+    description: 'Boné fictício com aba curva, detalhe amarelo e visual esportivo para fãs de corrida.',
+    price: 69.9,
+    oldPrice: null,
+    category: 'vestuario',
+    platforms: allPlatforms,
+    rating: 4.3,
+    badge: null,
+    tags: ['boné', 'moda gamer', 'corrida'],
+  },
+  {
+    id: 'caneca-golden-ring',
+    name: 'Caneca Golden Ring',
+    image: poster,
+    description: 'Caneca temática fictícia para café, estudos ou maratonas de gameplay.',
+    price: 44.9,
+    oldPrice: 59.9,
+    category: 'colecionaveis',
+    platforms: allPlatforms,
+    rating: 4.8,
+    badge: 'Combo setup',
+    tags: ['caneca', 'presente', 'setup'],
+  },
+  {
+    id: 'mousepad-crossworlds',
+    name: 'Mousepad CrossWorlds XL',
+    image: grip,
+    description: 'Mousepad grande fictício com superfície macia e arte neon para setup de PC.',
+    price: 84.9,
+    oldPrice: 109.9,
+    category: 'acessorios',
+    platforms: ['pc'],
+    rating: 4.9,
+    badge: 'PC gamer',
+    tags: ['mousepad', 'pc', 'setup'],
+  },
+  {
+    id: 'miniatura-speed-star',
+    name: 'Miniatura Speed Star',
+    image: deluxe,
+    description: 'Miniatura colecionável fictícia de veículo de corrida com base de exposição.',
+    price: 119.9,
+    oldPrice: 139.9,
+    category: 'colecionaveis',
+    platforms: allPlatforms,
+    rating: 4.6,
+    badge: 'Coleção',
+    tags: ['miniatura', 'veículo', 'coleção'],
+  },
+  {
+    id: 'gift-card-rings',
+    name: 'Gift Card 100 Anéis',
+    image: pass,
+    description: 'Cartão-presente fictício para presentear outro fã da loja com crédito promocional.',
+    price: 100.0,
+    oldPrice: null,
+    category: 'dlc',
+    platforms: allPlatforms,
+    rating: 4.5,
+    badge: 'Digital',
+    tags: ['gift card', 'presente', 'digital'],
+  },
+  {
+    id: 'combo-fan-pack',
+    name: 'Combo Fan Pack CrossWorlds',
+    image: ursinho,
+    description: 'Combo fictício com pelúcia, pôster, adesivos e chaveiro para fãs completarem a coleção.',
+    price: 219.9,
+    oldPrice: 269.9,
+    category: 'colecionaveis',
+    platforms: allPlatforms,
+    rating: 5.0,
+    badge: 'Melhor combo',
+    tags: ['combo', 'colecionável', 'presente'],
+  },
 ];
