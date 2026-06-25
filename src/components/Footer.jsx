@@ -1,73 +1,108 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import {
+  STORE_EMAIL,
+  STORE_WHATSAPP_DISPLAY,
+  STORE_WHATSAPP_NUMBER,
+} from '../config/store.js';
 import '../styles/Footer.css';
 
 export function Footer() {
-  // Guardar o e-mail digitado e outro para a mensagem de sucesso
   const [email, setEmail] = useState('');
   const [enviado, setEnviado] = useState(false);
 
-  // Função executada quando o usuário clica no botão "OK" ou aperta Enter
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault(); // Impede a página de recarregar
-    
+  function handleNewsletterSubmit(event) {
+    event.preventDefault();
+
     if (email.trim() !== '') {
       setEnviado(true);
-      // Aqui simularíamos o envio para um banco de dados
       console.log(`E-mail cadastrado com sucesso: ${email}`);
-      setEmail(''); // Limpa o campo após o envio
+      setEmail('');
     }
-  };
+  }
 
   return (
     <footer className="footer" id="contato">
       <div className="container footer-grid">
-        
-        {/* Coluna 1: Marca */}
         <div className="footer-brand">
           <strong className="footer-logo">Sonic Racing CrossWorlds Store</strong>
+
           <p className="footer-text">
-            Projeto acadêmico em React. Uma vitrine demonstrativa voltada ao público gamer, sem fins comerciais.
+            Loja demonstrativa em React com catálogo, carrinho, checkout e encaminhamento de pedido por WhatsApp.
           </p>
+
+          <div className="footer-socials" aria-label="Redes sociais da loja">
+            <a
+              href="https://instagram.com/sonicthehedgehogbrasil"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+
+            <a
+              href={`https://wa.me/${STORE_WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              WhatsApp
+            </a>
+
+            <a href="#produtos">Catálogo</a>
+          </div>
         </div>
 
-        {/* Coluna 2: Suporte */}
         <div className="footer-links">
-          <h4 className="footer-title">Suporte</h4>
+          <h4 className="footer-title">Atendimento</h4>
+
           <ul className="footer-list">
-            <li><a href="#faq">Políticas de Troca</a></li>
-            <li><a href="#termos">Termos de Serviço</a></li>
-            <li><a href="#privacidade">Privacidade</a></li>
+            <li>
+              <a
+                href={`https://wa.me/${STORE_WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                WhatsApp: {STORE_WHATSAPP_DISPLAY}
+              </a>
+            </li>
+
+            <li>
+              <a href={`mailto:${STORE_EMAIL}`}>{STORE_EMAIL}</a>
+            </li>
+
+            <li>
+              <span>Segunda a sexta • 9h às 18h</span>
+            </li>
           </ul>
         </div>
 
-        {/* Coluna 3: Desenvolvedores */}
         <div className="footer-links">
-          <h4 className="footer-title">Desenvolvedores</h4>
-          <ul className="footer-team-list">
-            <li><a href="https://instagram.com/sonicthehedgehogbrasil" target="_blank" rel="noreferrer">@sonicthehedgehogbrasil</a></li>
-            <li><a href="https://instagram.com/ryan6_9" target="_blank" rel="noreferrer">@ryan6_9</a></li>
-            <li><a href="https://instagram.com/dudekkjkj" target="_blank" rel="noreferrer">@dudekkjkj</a></li>
-            <li><a href="https://instagram.com/_karlita.beatrix" target="_blank" rel="noreferrer">@_karlita.beatrix</a></li>
-            <li><a href="https://instagram.com/_.yurilimaxz._" target="_blank" rel="noreferrer">@_.yurilimaxz._</a></li>
+          <h4 className="footer-title">Loja</h4>
+
+          <ul className="footer-list">
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#topo">Destaques</a></li>
           </ul>
         </div>
 
-        {/* Coluna 4: Newsletter Interativa */}
         <div className="footer-newsletter">
           <h4 className="footer-title">Fique por dentro</h4>
-          
-          {/* Se ainda não foi enviado, mostra o formulário. Se foi, mostra mensagem de sucesso */}
+
           {!enviado ? (
             <>
-              <p>Receba atualizações e novos patches do jogo.</p>
+              <p>
+                Receba novidades, promoções fictícias e novos produtos adicionados ao catálogo.
+              </p>
+
               <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-                <input 
-                  type="email" 
-                  placeholder="Seu melhor e-mail" 
+                <input
+                  type="email"
+                  placeholder="Seu melhor e-mail"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)} // Atualiza o estado enquanto digita
+                  onChange={(event) => setEmail(event.target.value)}
                   required
                 />
+
                 <button type="submit">OK</button>
               </form>
             </>
@@ -77,17 +112,34 @@ export function Footer() {
             </p>
           )}
         </div>
+      </div>
 
+      <div className="container footer-feature-row">
+        <div>
+          <strong>Compra rápida</strong>
+          <span>Resumo do pedido direto no WhatsApp.</span>
+        </div>
+
+        <div>
+          <strong>Projeto React</strong>
+          <span>Componentes, estados, filtros e carrinho.</span>
+        </div>
+
+        <div>
+          <strong>Layout responsivo</strong>
+          <span>Visual adaptado para celular e computador.</span>
+        </div>
       </div>
 
       <hr className="footer-divider" />
 
-      {/* Linha Inferior */}
       <div className="footer-bottom">
         <div className="container footer-bottom-flex">
-          <p>&copy; {new Date().getFullYear()} Sonic Game Store. Alguns direitos reservados.</p>
-          
-          <div className="footer-payments">
+          <p>
+            &copy; {new Date().getFullYear()} Sonic Game Store. Projeto acadêmico, sem vendas reais.
+          </p>
+
+          <div className="footer-payments" aria-label="Formas de pagamento simuladas">
             <span className="payment-badge">PIX</span>
             <span className="payment-badge">VISA</span>
             <span className="payment-badge">MASTERCARD</span>
